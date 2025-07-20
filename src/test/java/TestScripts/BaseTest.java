@@ -1,8 +1,10 @@
 package TestScripts;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
@@ -25,22 +27,22 @@ public class BaseTest {
 
     @BeforeMethod
     @Parameters("browser")
-    public void setup(String browser) throws MalformedURLException, InterruptedException {
+    public void setup(@Optional("chrome") String browser) throws MalformedURLException, InterruptedException {
         softAssert = new SoftAssert();
         DesiredCapabilities dc = new DesiredCapabilities();
         dc.setBrowserName(browser);
         switch (browser) {
             case "firefox":
-                driver = WebDriverManager.firefoxdriver().create();
-//            driver = new FirefoxDriver();
+//                driver = WebDriverManager.firefoxdriver().create();
+                driver = new FirefoxDriver();
                 break;
             case "chrome":
-                driver = WebDriverManager.chromedriver().create();
-//                driver = new ChromeDriver();
+//                driver = WebDriverManager.chromedriver().create();
+                driver = new ChromeDriver();
                 break;
             case "edge":
-                driver = WebDriverManager.edgedriver().create();
-//            driver = new EdgeDriver();
+//                driver = WebDriverManager.edgedriver().create();
+                driver = new EdgeDriver();
                 break;
 
         }
