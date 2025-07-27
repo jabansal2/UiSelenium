@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class GeoLocationTest{
 
-    @Test
+//    @Test
     public void test_1(){
 
     }
