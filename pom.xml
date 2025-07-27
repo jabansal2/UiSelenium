@@ -23,7 +23,9 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>3.3.0</version>
                         <configuration>
-                            <suiteXmlFile>testng_actions.xml</suiteXmlFile>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>testng_actions.xml</suiteXmlFile>
+                            </suiteXmlFiles>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -35,7 +37,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
 
